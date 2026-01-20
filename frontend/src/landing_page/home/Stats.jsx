@@ -21,7 +21,7 @@ function Stats( ) {
     ]
 
     return(
-        <div className='mt-14 mb-12'>
+        <section className='stats-section mt-14 mb-12'>
             <div className='grid grid-cols-12 px-4 sm:px-6 md:px-10 lg:px-16 place-items-center'>
                 <div className="md:col-span-6 col-span-12 order-2 md:order-1 p-4">
                     <h1 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-black'>Trust with confidence</h1>
@@ -39,9 +39,13 @@ function Stats( ) {
                 </div>
                 <div className="md:col-span-6 col-span-12 order-1 md:order-2 p-8">
                     <img className='w-md md:w-lg' src="/media/images/ecosystem.png" alt="Ecosystem image" />
+                    <div className='mt-6 flex justify-center gap-4 text-blue-600 font-semibold text-sm md:text-md lg:text-md'>
+                        <a href="#">Explore our products <i className="fas fa-arrow-right"></i></a>
+                        <a href="#">Try Kite demo <i className="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
