@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import SectionHeading from './SectionHeading';
 
 function Awards( ) {
     return(
@@ -8,7 +9,8 @@ function Awards( ) {
                     <img className='w-sm md:w-md' src='/media/images/largestBroker.svg' alt='Press Logos' />
                 </div>
                 <div className='md:col-span-6 col-span-12 p-6 md:p-6 lg:p-8 text-md md:text-sm lg:text-lg text-gray-700'>
-                    <h1 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-black mb-2'>Largest stock broker in India</h1>
+                    
+                    <SectionHeading text="Largest stock broker in India" />
                     <p className='mb-4 md:mb-7'>2+ million clients contribute to over 15% of all retail order volumes in India daily by trading and investing in:</p>
 
                     <div className="grid grid-rows-1 grid-cols-12 mb-[3rem]">

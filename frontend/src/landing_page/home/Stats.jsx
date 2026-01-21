@@ -1,4 +1,5 @@
 import React from 'react'
+import SectionHeading from './SectionHeading';
 
 function Stats( ) {
     let stats = [
@@ -24,7 +25,8 @@ function Stats( ) {
         <section className='stats-section mt-14 mb-12'>
             <div className='grid grid-cols-12 px-4 sm:px-6 md:px-10 lg:px-16 place-items-center'>
                 <div className="md:col-span-6 col-span-12 order-2 md:order-1 p-4">
-                    <h1 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-black'>Trust with confidence</h1>
+
+                    <SectionHeading text="Trust with confidence" />
 
                     <div className="grid grid-rows-4 grid-cols-1 place-items-center justify-items-start gap-3 md:gap-4 lg:gap-6 mt-3 md:mt-6 text-gray-700 text-sm md:text-md lg:text-lg">
                         {
