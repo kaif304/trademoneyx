@@ -4,7 +4,7 @@ function Hero( ) {
     return(
         <div className="min-h-48 flex flex-col items-center justify-center px-4 py-6 md:py-6">
             {/* Image Section */}
-            <div className="flex justify-center mt-2 md:mt-8">
+            <div className="flex justify-center mt-6 md:mt-8">
                 <img 
                     src="media/images/homeHero.png" 
                     alt="hero image"
@@ -22,7 +22,7 @@ function Hero( ) {
                     Online platform to invest in stocks, derivatives, mutual funds, and more
                 </p>
 
-                <button className="text-sm md:text-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-4 md:mt-6 px-6 py-2 sm:px-10 sm:py-3 md:px-25 md:py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:cursor-pointer">
+                <button className="text-sm md:text-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-4 md:mt-6 px-6 py-2 sm:px-12 sm:py-2 md:px-25 md:py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:cursor-pointer">
                     Sign up
                 </button>
             </div>
