@@ -4,7 +4,7 @@ function Hero( ) {
     return(
         <div className="min-h-48 flex flex-col items-center justify-center px-4 py-6 md:py-6">
             {/* Image Section */}
-            <div className="flex justify-center mt-6 md:mt-8">
+            <div className="flex justify-center mt-2 md:mt-0">
                 <img 
                     src="media/images/homeHero.png" 
                     alt="hero image"
