@@ -1,9 +1,10 @@
 import React from 'react'
+import FooterWrapper from './footer/FooterWrapper'
 
-function Footer( ) {
-    return(
-        <h1>Footer</h1>
-    );
+function Footer() {
+  return (
+    <FooterWrapper />
+  )
 }
 
-export default Footer;
+export default Footer
