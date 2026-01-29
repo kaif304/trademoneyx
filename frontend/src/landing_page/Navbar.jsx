@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { href, Link } from "react-router-dom";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     const navItems = [
-    "Dashboard",
-    "Markets",
-    "Portfolio",
-    "Orders",
+    "Signup",
+    "About",
+    "Products",
+    "Pricing",
+    "Support"
   ];
 
     return (
@@ -30,7 +32,7 @@ export default function Navbar() {
                         <ul className="hidden bg-white md:flex items-center gap-4 lg:gap-8 text-md md:text-lg font-medium text-gray-700">
                             {navItems.map((item) => (
                                 <li key={item} className="hover:text-black transition-colors">
-                                    <AnchorWithUnderline text={item} />
+                                    <LinkWithUnderline text={item} path={item.toLowerCase()}/>
                                 </li>
                             ))}
                             <div className="bg-gray-100 text-gray-800 hover:text-black border border-gray-300 hover:border-gray-400 rounded-full px-4 py-1 transition-all duration-300 ease-in-out">
@@ -50,7 +52,7 @@ export default function Navbar() {
                     }>
                     <ul className="flex flex-col items-center gap-4 px-6 py-4 text-gray-700 font-medium">
                         {navItems.map((item) => (
-                            <li key={item} className=""><AnchorWithUnderline text={item}/></li>
+                            <li key={item} className=""><LinkWithUnderline text={item} path={item.toLowerCase()}/></li>
                         ))}
                     </ul>
                 </div>
@@ -61,10 +63,32 @@ export default function Navbar() {
     )
 }
 
-function AnchorWithUnderline({text}) {
+// function AnchorWithUnderline({text}) {
+// return (
+//         <a 
+//             href="#"
+//             className="
+//                 relative
+//                 after:content-['']
+//                 after:absolute
+//                 after:left-1/2
+//                 after:-translate-x-1/2
+//                 after:h-0.5
+//                 after:w-0
+//                 after:bg-black
+//                 after:bottom-[-2px]
+//                 after:transition-all
+//                 after:duration-400
+//                 hover:after:w-full
+//                 ">
+//             {text}
+//         </a>
+//     )
+// }
+function LinkWithUnderline({text, path}) {
     return (
-        <a 
-            href="#"
+        <Link
+            to={'/'+path}
             className="
                 relative
                 after:content-['']
@@ -76,11 +100,11 @@ function AnchorWithUnderline({text}) {
                 after:bg-black
                 after:bottom-[-2px]
                 after:transition-all
-                after:duration-400
+                after:duration-300
                 hover:after:w-full
                 ">
             {text}
-        </a>
+        </Link>
     )
 }
 
