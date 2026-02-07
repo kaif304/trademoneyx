@@ -24,7 +24,7 @@ export default function Navbar() {
                     </button>
                     {/* Logo */}
                     <div className="flex items-center">
-                        <img className="h-6 w-auto" src="media/images/logo.svg" alt="Logo" />
+                        <a href="/"><img className="h-6 w-auto" src="media/images/logo.svg" alt="Logo" /></a>
                     </div>
 
                     {/* Nav Items */}
