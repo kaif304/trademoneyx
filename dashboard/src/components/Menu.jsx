@@ -15,19 +15,37 @@ function Menu() {
 
   const menuClass = "menu"
   const activeMenuClass = "menu active"
+
+  const menus = [
+    { name: "Dashboard", path: "dashboard" },
+    { name: "Orders", path: "orders" },
+    { name: "Holdings", path: "holdings" },
+    { name: "Positions", path: "positions" },
+    { name: "Funds", path: "funds" },
+    { name: "Apps", path: "apps" }
+  ];
   
   return (
     <div className='menu-container'>
-      <img src="logo.png" alt="logo" className='w-12.5' />
+      <img src="logo.png" alt="logo" className='h-6' />
 
       <div className="menus">
         <ul>
-          <li>
+          {menus.map((menu, index) => (
+            <li key={index}>
+              <Link to={`/${menu.path}`} onClick={() => handleMenuClick(index)}>
+                <p className={selectedMenu === index ? activeMenuClass : menuClass}>{menu.name}</p>
+              </Link>
+            </li>
+          ))}
+
+          
+          {/* <li>
             <Link to="/" onClick={() => handleMenuClick(0)}>
               <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>Dashboard</p>
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link to="/orders" onClick={() => handleMenuClick(1)}>
               <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>Orders</p>
             </Link>
@@ -51,7 +69,7 @@ function Menu() {
             <Link to="/apps" onClick={() => handleMenuClick(6)}>
               <p className={selectedMenu === 6 ? activeMenuClass : menuClass}>Apps</p>
             </Link>
-          </li>
+          </li> */}
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
