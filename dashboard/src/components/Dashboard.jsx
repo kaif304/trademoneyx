@@ -1,21 +1,22 @@
-import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-import WatchList from './WatchList'
-import Summary from './Summary'
-import Orders from './Orders'
-import Holdings from './Holdings'
-import Positions from './Positions'
-import Funds from './Funds'
-import Apps from './Apps'
+import WatchList from "./WatchList";
+import Summary from "./Summary";
+import Orders from "./Orders";
+import Holdings from "./Holdings";
+import Positions from "./Positions";
+import Funds from "./Funds";
+import Apps from "./Apps";
 
-function Dashboard() {
+function Dashboard({ currentUser }) {
   return (
-    <div className='dashboard-container'>
+    <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-6 px-4 pb-10 xl:flex-row">
       <WatchList />
-      <div className='content'>
+      <div className="flex-1">
         <Routes>
-          <Route exact path="/" element={<Navigate to="/dashboard" />} />
+          <Route path="/" element={<Summary currentUser={currentUser} />} />
+          <Route path="/dashboard" element={<Summary currentUser={currentUser} />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/holdings" element={<Holdings />} />
           <Route path="/positions" element={<Positions />} />
@@ -24,7 +25,7 @@ function Dashboard() {
         </Routes>
       </div>
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

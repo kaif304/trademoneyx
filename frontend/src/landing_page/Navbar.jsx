@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { href, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ onOpenAuth }) {
     const [open, setOpen] = useState(false);
 
     const navItems = [
-    "Signup",
-    "About",
-    "Products",
-    "Pricing",
-    "Support"
-  ];
+        "About",
+        "Products",
+        "Pricing",
+        "Support"
+    ];
 
     return (
         <>
@@ -35,12 +34,40 @@ export default function Navbar() {
                                     <LinkWithUnderline text={item} path={item.toLowerCase()}/>
                                 </li>
                             ))}
-                            <div className="bg-gray-100 text-gray-800 hover:text-black border border-gray-300 hover:border-gray-400 rounded-full px-4 py-1 transition-all duration-300 ease-in-out">
-                                <a href="#">Profile</a>
-                            </div>
+                            <li>
+                                <button
+                                    type="button"
+                                    className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900 hover:cursor-pointer"
+                                    onClick={() => onOpenAuth("login")}
+                                >
+                                    Log in
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-100 transition hover:bg-blue-700 hover:cursor-pointer"
+                                    onClick={() => onOpenAuth("signup")}
+                                >
+                                    Sign up
+                                </button>
+                            </li>
                         </ul>
-                        <div className="md:hidden bg-gray-100 text-2xl text-gray-800 hover:text-black border border-gray-300 hover:border-gray-400 rounded-full px-2 py-1 transition-all duration-400 ease-in-out">
-                            <a href="#"><i className="fa-solid fa-circle-user"></i></a>
+                        <div className="md:hidden flex items-center gap-2">
+                            <button
+                                type="button"
+                                className="rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:text-slate-900"
+                                onClick={() => onOpenAuth("login")}
+                            >
+                                Log in
+                            </button>
+                            <button
+                                type="button"
+                                className="rounded-full bg-blue-600 px-3 py-1.5 text-sm font-medium text-white shadow-md transition hover:bg-blue-700"
+                                onClick={() => onOpenAuth("signup")}
+                            >
+                                Sign up
+                            </button>
                         </div>
                     </div>
 
@@ -54,6 +81,30 @@ export default function Navbar() {
                         {navItems.map((item) => (
                             <li key={item} className=""><LinkWithUnderline text={item} path={item.toLowerCase()}/></li>
                         ))}
+                        <li className="w-full max-w-xs pt-2">
+                            <button
+                                type="button"
+                                className="w-full rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
+                                onClick={() => {
+                                    setOpen(false);
+                                    onOpenAuth("login");
+                                }}
+                            >
+                                Log in
+                            </button>
+                        </li>
+                        <li className="w-full max-w-xs">
+                            <button
+                                type="button"
+                                className="w-full rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md"
+                                onClick={() => {
+                                    setOpen(false);
+                                    onOpenAuth("signup");
+                                }}
+                            >
+                                Sign up
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </nav>

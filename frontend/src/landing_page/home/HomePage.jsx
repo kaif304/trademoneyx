@@ -7,15 +7,15 @@ import Education from './Education';
 
 import OpenAccount from '../OpenAccount';
 
-function HomePage( ) {
+function HomePage({ onOpenAuth }) {
     return(
         <> 
-            <Hero />
+            <Hero onOpenAuth={onOpenAuth} />
             <Awards />
             <Stats />
             <Pricing />
             <Education />
-            <OpenAccount />
+            <OpenAccount onOpenAuth={onOpenAuth} />
         </>
     );
 }

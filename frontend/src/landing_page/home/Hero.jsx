@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Hero( ) {
+function Hero({ onOpenAuth }) {
     return(
         <div className="min-h-48 flex flex-col items-center justify-center px-4 py-6 md:py-6">
             {/* Image Section */}
@@ -22,7 +22,11 @@ function Hero( ) {
                     Online platform to invest in stocks, derivatives, mutual funds, and more
                 </p>
 
-                <button className="text-sm md:text-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-4 md:mt-6 px-6 py-2 sm:px-12 sm:py-2 md:px-25 md:py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:cursor-pointer">
+                <button
+                    type="button"
+                    className="text-sm md:text-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-4 md:mt-6 px-6 py-2 sm:px-12 sm:py-2 md:px-25 md:py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:cursor-pointer"
+                    onClick={() => onOpenAuth("signup")}
+                >
                     Sign up
                 </button>
             </div>

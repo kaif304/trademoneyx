@@ -3,15 +3,16 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import './main.css'
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './components/Home'
+import { BrowserRouter } from 'react-router-dom'
+import { GeneralContextProvider } from './components/GeneralContext'
+import App from './App'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/*" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <GeneralContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </GeneralContextProvider>
   </StrictMode>,
 )
