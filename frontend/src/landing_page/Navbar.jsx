@@ -23,7 +23,9 @@ export default function Navbar({ onOpenAuth }) {
                     </button>
                     {/* Logo */}
                     <div className="flex items-center">
-                        <a href="/"><img className="h-6 w-auto" src="media/images/logo.svg" alt="Logo" /></a>
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-500 tracking-wide">
+                            TradeMoneyX
+                        </h1>
                     </div>
 
                     {/* Nav Items */}
